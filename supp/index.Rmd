@@ -1,0 +1,56 @@
+--- 
+title: "An exploratory analysis of Perdiz arrow point morphology in Texas"
+author: "Robert Z. Selden, Jr., Bonnie L. Etter, and B. Sunday Eiselt"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Morphology of Perdiz arrow points in Texas."
+---
+
+
+# Preface {-}
+
+>Reproducibility---the ability to recompute results---and replicability---the chances other experimenters will achieve a consistent result---are two foundational characteristics of successful scientific research [@RN20918].
+
+This volume is written using _Markdown_, and includes all analysis code employed in the study, providing a means for others to reproduce (exactly) those results discussed and expounded upon in the following chapters. The replicable nature of this undertaking provides a means for others to critically assess and evaluate the various analytical components of this study [@RN20915;@RN20916;@RN20917], which is a necessary requirement for the production of reliable knowledge.
+
+## Basis of inquiry
+
+The Toyah Phase has been the center of debate about Texas prehistory, since J. Charles Kelly first defined it in 1947. Known widely as the Toyah Phase Paradox, research has struggled to reconcile the homogenous expression of this protohistoric to historic archaeological record in central Texas and the high levels of ethnic diversity witnessed by French and Spanish explorers at the turn of the 18th-century. Recent studies have related geographic and temporal variation in artifact styles to “communities of practice” using standard 2D measurement techniques, with varying degrees of success. We build on this research by using a 3D geometric morphometric approach to examine previously published photographs of Perdiz projectile points (176 points) from sites across the state, a hallmark of Toyah assemblages. The primary goal of the study is to explore how 2D imaging and geometric morphometric analyses can identify localized variants of Perdiz points based on shape. This work, in turn, may be used to infer patterns of interaction between village clusters through network analyses at the regional scale. Implications for how cultural plurality in central Texas may have influenced Spanish missionization are discussed.
+
+_The goal of this endeavour ..._
+
+## Primary findings
+
+* 
+
+## Acknowledgments
+
+We extend our gratitude to the Material Sciences Laboratory at Southern Methodist University, the Williamson Museum at Northwestern State University, the Louisiana State Exhibit Museum, the Texas Archeological Research Laboratory at The University of Texas at Austin, and the Louisiana State University Museum of Natural Science for the requisite permissions, access, and space needed to generate 3D scans of Caddo bottles. Thanks also to Dean C. Adams, Michael L. Collyer, Emma Sherratt, Michael J. Shott, Hiram F. (Pete) Gregory, B. Sunday Eiselt, and Kersten Bergstrom for their constructive criticisms, comments, and suggestions throughout the development of this research programme, as well as the editors and anonymous reviewers whose comments improved the manuscript. 
+
+## Funding
+
+Development of analytical components used in this analysis was funded by a grant to RZS (P14AP00138) from the National Center for Preservation Technology and Training.
+
+## Data management
+
+The data and analysis code associated with this project can be accessed through this document or the [GitHub](https://github.com/aksel-blaise/texas.perdiz) repository, which is digitally curated on the Open Science Framework ([DOI: link here](https://github.com/aksel-blaise/texas.perdiz).
+
+## Colophon
+
+This version of the analysis was generated on `r Sys.time()` using the following computational environment and dependencies: 
+
+```{r colophon, cache = FALSE}
+# what R packages and versions were used?
+if ("devtools" %in% installed.packages()) devtools::session_info()
+```
+
+Current Git commit details are:
+
+```{r}
+# where can I find this commit? 
+if ("git2r" %in% installed.packages() & git2r::in_repository(path = ".")) git2r::repository(here::here())  
+```
