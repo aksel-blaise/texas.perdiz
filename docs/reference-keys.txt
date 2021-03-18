@@ -11,6 +11,8 @@ read-qualitative-data
 generalised-procrustes-analysis
 boxplot
 principal-components-analysis
+procrustes-anova---allometry
 procrustes-anova---shape-and-size
+morphological-integration
 morphological-disparity
 mean-shapes
