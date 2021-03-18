@@ -16,3 +16,10 @@ procrustes-anova---shape-and-size
 morphological-integration
 morphological-disparity
 mean-shapes
+site-type
+read-data-and-define-slms-1
+read-qualitative-data-1
+generalised-procrustes-analysis-1
+boxplot-1
+principal-components-analysis-1
+procrustes-anova---shape-and-size-1

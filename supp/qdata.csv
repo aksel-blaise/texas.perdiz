@@ -1,91 +1,91 @@
-﻿specimen,county,region,river
-perdiz007,McLennan,blackland prairies,Brazos
-perdiz029d,milam,blackland prairies,Brazos
-perdiz029g,milam,blackland prairies,Brazos
-perdiz011,lampass,edwards plateau,Brazos
-perdiz010,hamilton,oak woods and parairies,Brazos
-perdiz012a,burleson,oak woods and parairies,Brazos
-perdiz012c,burleson,oak woods and parairies,Brazos
-perdiz014,lee,oak woods and parairies,Brazos
-perdiz018,burleson,oak woods and parairies,Brazos
-perdiz003,bosque,blackland prairies,Colorado
-perdiz001a,kimble,edwards plateau,Colorado
-perdiz001b,kimble,edwards plateau,Colorado
-perdiz001c,kimble,edwards plateau,Colorado
-perdiz002,kimble,edwards plateau,Colorado
-perdiz004e,kimble,edwards plateau,Colorado
-perdiz004g,kimble,edwards plateau,Colorado
-perdiz028d,guadalupe,blackland prairies,Guadalupe
-perdiz015,comal,edwards plateau,Guadalupe
-perdiz016,hays,edwards plateau,Guadalupe
-perdiz017a,hays,edwards plateau,Guadalupe
-perdiz017d,hays,edwards plateau,Guadalupe
-perdiz017f,hays,edwards plateau,Guadalupe
-perdiz020a,nacogdoches,piney woods,Neches
-perdiz020b,nacogdoches,piney woods,Neches
-perdiz020c,nacogdoches,piney woods,Neches
-perdiz021a,nacogdoches,piney woods,Neches
-perdiz021b,nacogdoches,piney woods,Neches
-perdiz021c,nacogdoches,piney woods,Neches
-perdiz021d,nacogdoches,piney woods,Neches
-perdiz021e,nacogdoches,piney woods,Neches
-perdiz021f,nacogdoches,piney woods,Neches
-perdiz021g,nacogdoches,piney woods,Neches
-perdiz021h,nacogdoches,piney woods,Neches
-perdiz021i,nacogdoches,piney woods,Neches
-perdiz022h,smith,piney woods,Neches
-perdiz022i,smith,piney woods,Neches
-perdiz022j,smith,piney woods,Neches
-perdiz022k,smith,piney woods,Neches
-perdiz022L,smith,piney woods,Neches
-perdiz022m,smith,piney woods,Neches
-perdiz023a,smith,piney woods,Neches
-perdiz023b,smith,piney woods,Neches
-perdiz023c,smith,piney woods,Neches
-perdiz023e,smith,piney woods,Neches
-perdiz023f,smith,piney woods,Neches
-perdiz023g,smith,piney woods,Neches
-perdiz024j,smith,piney woods,Neches
-perdiz025c,smith,piney woods,Neches
-perdiz008cap,uvalde,edwards plateau,Nueces 
-perdiz008iap,uvalde,edwards plateau,Nueces 
-perdiz008oap,uvalde,edwards plateau,Nueces 
-perdiz008pap,uvalde,edwards plateau,Nueces 
-perdiz008x,uvalde,edwards plateau,Nueces 
-perdiz005a,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz005b,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz005c,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz005e,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz005g,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz005h,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz005i,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz005j,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz005k,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz005L,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz005o,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz005q,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz005r,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz005t,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz005u,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz005x,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz006a,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz006b,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz006g,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz006h,"JW, hinojosa site",gulf coast prairies and marshes,NRG
-perdiz030h,camp,piney woods,Red
-perdiz030i,camp,piney woods,Red
-perdiz031a,camp,piney woods,Red
-perdiz033f,harris,gulf coast prairies and marshes,San Jacinto
-perdiz033g,harris,gulf coast prairies and marshes,San Jacinto
-perdiz033h,harris,gulf coast prairies and marshes,San Jacinto
-perdiz033i,harris,gulf coast prairies and marshes,San Jacinto
-perdiz033k,harris,gulf coast prairies and marshes,San Jacinto
-rep02a,navarro,blackland prairies,Trinity
-rep02b,navarro,blackland prairies,Trinity
-rep02c,navarro,blackland prairies,Trinity
-rep02e,navarro,blackland prairies,Trinity
-rep02k,navarro,blackland prairies,Trinity
-rep05i,navarro,blackland prairies,Trinity
-rep018f,collin,blackland prairies,Trinity
-smu03,navarro,edwards plateau,Trinity
-rep06,freestone,oak woods and parairies,Trinity
+﻿specimen,county,region,river,settlement
+perdiz007,McLennan,blackland prairies,Brazos,unknown
+perdiz029d,milam,blackland prairies,Brazos,unknown
+perdiz029g,milam,blackland prairies,Brazos,unknown
+perdiz011,lampass,edwards plateau,Brazos,camp
+perdiz010,hamilton,oak woods and parairies,Brazos,unknown
+perdiz012a,burleson,oak woods and parairies,Brazos,unknown
+perdiz012c,burleson,oak woods and parairies,Brazos,unknown
+perdiz014,lee,oak woods and parairies,Brazos,unknown
+perdiz018,burleson,oak woods and parairies,Brazos,unknown
+perdiz003,bosque,blackland prairies,Colorado,camp
+perdiz001a,kimble,edwards plateau,Colorado,agg
+perdiz001b,kimble,edwards plateau,Colorado,agg
+perdiz001c,kimble,edwards plateau,Colorado,agg
+perdiz002,kimble,edwards plateau,Colorado,camp
+perdiz004e,kimble,edwards plateau,Colorado,camp
+perdiz004g,kimble,edwards plateau,Colorado,camp
+perdiz028d,guadalupe,blackland prairies,Guadalupe,camp
+perdiz015,comal,edwards plateau,Guadalupe,unknown
+perdiz016,hays,edwards plateau,Guadalupe,unknown
+perdiz017a,hays,edwards plateau,Guadalupe,unknown
+perdiz017d,hays,edwards plateau,Guadalupe,unknown
+perdiz017f,hays,edwards plateau,Guadalupe,unknown
+perdiz020a,nacogdoches,piney woods,Neches,camp
+perdiz020b,nacogdoches,piney woods,Neches,camp
+perdiz020c,nacogdoches,piney woods,Neches,camp
+perdiz021a,nacogdoches,piney woods,Neches,camp
+perdiz021b,nacogdoches,piney woods,Neches,camp
+perdiz021c,nacogdoches,piney woods,Neches,camp
+perdiz021d,nacogdoches,piney woods,Neches,camp
+perdiz021e,nacogdoches,piney woods,Neches,camp
+perdiz021f,nacogdoches,piney woods,Neches,camp
+perdiz021g,nacogdoches,piney woods,Neches,camp
+perdiz021h,nacogdoches,piney woods,Neches,camp
+perdiz021i,nacogdoches,piney woods,Neches,camp
+perdiz022h,smith,piney woods,Neches,camp
+perdiz022i,smith,piney woods,Neches,camp
+perdiz022j,smith,piney woods,Neches,camp
+perdiz022k,smith,piney woods,Neches,camp
+perdiz022L,smith,piney woods,Neches,camp
+perdiz022m,smith,piney woods,Neches,camp
+perdiz023a,smith,piney woods,Neches,camp
+perdiz023b,smith,piney woods,Neches,camp
+perdiz023c,smith,piney woods,Neches,camp
+perdiz023e,smith,piney woods,Neches,camp
+perdiz023f,smith,piney woods,Neches,camp
+perdiz023g,smith,piney woods,Neches,camp
+perdiz024j,smith,piney woods,Neches,unknown
+perdiz025c,smith,piney woods,Neches,unknown
+perdiz008cap,uvalde,edwards plateau,Nueces ,agg
+perdiz008iap,uvalde,edwards plateau,Nueces ,agg
+perdiz008oap,uvalde,edwards plateau,Nueces ,agg
+perdiz008pap,uvalde,edwards plateau,Nueces ,agg
+perdiz008x,uvalde,edwards plateau,Nueces ,agg
+perdiz005a,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz005b,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz005c,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz005e,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz005g,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz005h,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz005i,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz005j,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz005k,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz005L,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz005o,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz005q,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz005r,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz005t,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz005u,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz005x,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz006a,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz006b,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz006g,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz006h,"JW, hinojosa site",gulf coast prairies and marshes,NRG,agg
+perdiz030h,camp,piney woods,Red,unknown
+perdiz030i,camp,piney woods,Red,unknown
+perdiz031a,camp,piney woods,Red,camp
+perdiz033f,harris,gulf coast prairies and marshes,San Jacinto,camp
+perdiz033g,harris,gulf coast prairies and marshes,San Jacinto,camp
+perdiz033h,harris,gulf coast prairies and marshes,San Jacinto,camp
+perdiz033i,harris,gulf coast prairies and marshes,San Jacinto,camp
+perdiz033k,harris,gulf coast prairies and marshes,San Jacinto,camp
+rep02a,navarro,blackland prairies,Trinity,unknown
+rep02b,navarro,blackland prairies,Trinity,unknown
+rep02c,navarro,blackland prairies,Trinity,unknown
+rep02e,navarro,blackland prairies,Trinity,unknown
+rep02k,navarro,blackland prairies,Trinity,unknown
+rep05i,navarro,blackland prairies,Trinity,camp
+rep018f,collin,blackland prairies,Trinity,unknown
+smu03,navarro,edwards plateau,Trinity,unknown
+rep06,freestone,oak woods and parairies,Trinity,camp

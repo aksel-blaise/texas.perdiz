@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="measurement-error.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="site-type.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -156,6 +156,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.9" data-path="river-basins.html"><a href="river-basins.html#morphological-disparity"><i class="fa fa-check"></i><b>3.9</b> Morphological disparity</a></li>
 <li class="chapter" data-level="3.10" data-path="river-basins.html"><a href="river-basins.html#mean-shapes"><i class="fa fa-check"></i><b>3.10</b> Mean shapes</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="site-type.html"><a href="site-type.html"><i class="fa fa-check"></i><b>4</b> Site type</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="site-type.html"><a href="site-type.html#read-data-and-define-slms-1"><i class="fa fa-check"></i><b>4.1</b> Read data and define sLMs</a></li>
+<li class="chapter" data-level="4.2" data-path="site-type.html"><a href="site-type.html#read-qualitative-data-1"><i class="fa fa-check"></i><b>4.2</b> Read qualitative data</a></li>
+<li class="chapter" data-level="4.3" data-path="site-type.html"><a href="site-type.html#generalised-procrustes-analysis-1"><i class="fa fa-check"></i><b>4.3</b> Generalised Procrustes Analysis</a></li>
+<li class="chapter" data-level="4.4" data-path="site-type.html"><a href="site-type.html#boxplot-1"><i class="fa fa-check"></i><b>4.4</b> Boxplot</a></li>
+<li class="chapter" data-level="4.5" data-path="site-type.html"><a href="site-type.html#principal-components-analysis-1"><i class="fa fa-check"></i><b>4.5</b> Principal Components Analysis</a></li>
+<li class="chapter" data-level="4.6" data-path="site-type.html"><a href="site-type.html#procrustes-anova---shape-and-size-1"><i class="fa fa-check"></i><b>4.6</b> Procrustes ANOVA - shape and size</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -213,15 +222,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb9-10"><a href="river-basins.html#cb9-10" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(qdata,</span>
 <span id="cb9-11"><a href="river-basins.html#cb9-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">align =</span> <span class="st">&quot;lccc&quot;</span>,</span>
 <span id="cb9-12"><a href="river-basins.html#cb9-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Attributes of Perdiz arrow points included in the sample.&quot;</span>)</span></code></pre></div>
-<table>
+<table style="width:100%;">
 <caption>(#tab:gp.river)Attributes of Perdiz arrow points included in the sample.</caption>
+<colgroup>
+<col width="13%" />
+<col width="18%" />
+<col width="33%" />
+<col width="13%" />
+<col width="12%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left"></th>
 <th align="left">county</th>
 <th align="center">region</th>
 <th align="center">river</th>
-<th align="center">csz</th>
+<th align="center">settlement</th>
+<th align="left">csz</th>
 </tr>
 </thead>
 <tbody>
@@ -230,630 +248,720 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">McLennan</td>
 <td align="center">blackland prairies</td>
 <td align="center">Brazos</td>
-<td align="center">69.35797</td>
+<td align="center">unknown</td>
+<td align="left">69.35797</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz029d</td>
 <td align="left">milam</td>
 <td align="center">blackland prairies</td>
 <td align="center">Brazos</td>
-<td align="center">73.14749</td>
+<td align="center">unknown</td>
+<td align="left">73.14749</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz029g</td>
 <td align="left">milam</td>
 <td align="center">blackland prairies</td>
 <td align="center">Brazos</td>
-<td align="center">58.52238</td>
+<td align="center">unknown</td>
+<td align="left">58.52238</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz011</td>
 <td align="left">lampass</td>
 <td align="center">edwards plateau</td>
 <td align="center">Brazos</td>
-<td align="center">70.84758</td>
+<td align="center">camp</td>
+<td align="left">70.84758</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz010</td>
 <td align="left">hamilton</td>
 <td align="center">oak woods and parairies</td>
 <td align="center">Brazos</td>
-<td align="center">60.02730</td>
+<td align="center">unknown</td>
+<td align="left">60.02730</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz012a</td>
 <td align="left">burleson</td>
 <td align="center">oak woods and parairies</td>
 <td align="center">Brazos</td>
-<td align="center">60.43875</td>
+<td align="center">unknown</td>
+<td align="left">60.43875</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz012c</td>
 <td align="left">burleson</td>
 <td align="center">oak woods and parairies</td>
 <td align="center">Brazos</td>
-<td align="center">50.37065</td>
+<td align="center">unknown</td>
+<td align="left">50.37065</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz014</td>
 <td align="left">lee</td>
 <td align="center">oak woods and parairies</td>
 <td align="center">Brazos</td>
-<td align="center">38.60532</td>
+<td align="center">unknown</td>
+<td align="left">38.60532</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz018</td>
 <td align="left">burleson</td>
 <td align="center">oak woods and parairies</td>
 <td align="center">Brazos</td>
-<td align="center">36.04801</td>
+<td align="center">unknown</td>
+<td align="left">36.04801</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz003</td>
 <td align="left">bosque</td>
 <td align="center">blackland prairies</td>
 <td align="center">Colorado</td>
-<td align="center">31.63170</td>
+<td align="center">camp</td>
+<td align="left">31.63170</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz001a</td>
 <td align="left">kimble</td>
 <td align="center">edwards plateau</td>
 <td align="center">Colorado</td>
-<td align="center">38.73303</td>
+<td align="center">agg</td>
+<td align="left">38.73303</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz001b</td>
 <td align="left">kimble</td>
 <td align="center">edwards plateau</td>
 <td align="center">Colorado</td>
-<td align="center">42.18146</td>
+<td align="center">agg</td>
+<td align="left">42.18146</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz001c</td>
 <td align="left">kimble</td>
 <td align="center">edwards plateau</td>
 <td align="center">Colorado</td>
-<td align="center">40.21831</td>
+<td align="center">agg</td>
+<td align="left">40.21831</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz002</td>
 <td align="left">kimble</td>
 <td align="center">edwards plateau</td>
 <td align="center">Colorado</td>
-<td align="center">46.89038</td>
+<td align="center">camp</td>
+<td align="left">46.89038</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz004e</td>
 <td align="left">kimble</td>
 <td align="center">edwards plateau</td>
 <td align="center">Colorado</td>
-<td align="center">47.12634</td>
+<td align="center">camp</td>
+<td align="left">47.12634</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz004g</td>
 <td align="left">kimble</td>
 <td align="center">edwards plateau</td>
 <td align="center">Colorado</td>
-<td align="center">44.19071</td>
+<td align="center">camp</td>
+<td align="left">44.19071</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz028d</td>
 <td align="left">guadalupe</td>
 <td align="center">blackland prairies</td>
 <td align="center">Guadalupe</td>
-<td align="center">49.62448</td>
+<td align="center">camp</td>
+<td align="left">49.62448</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz015</td>
 <td align="left">comal</td>
 <td align="center">edwards plateau</td>
 <td align="center">Guadalupe</td>
-<td align="center">50.95445</td>
+<td align="center">unknown</td>
+<td align="left">50.95445</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz016</td>
 <td align="left">hays</td>
 <td align="center">edwards plateau</td>
 <td align="center">Guadalupe</td>
-<td align="center">54.49649</td>
+<td align="center">unknown</td>
+<td align="left">54.49649</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz017a</td>
 <td align="left">hays</td>
 <td align="center">edwards plateau</td>
 <td align="center">Guadalupe</td>
-<td align="center">56.57031</td>
+<td align="center">unknown</td>
+<td align="left">56.57031</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz017d</td>
 <td align="left">hays</td>
 <td align="center">edwards plateau</td>
 <td align="center">Guadalupe</td>
-<td align="center">64.34497</td>
+<td align="center">unknown</td>
+<td align="left">64.34497</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz017f</td>
 <td align="left">hays</td>
 <td align="center">edwards plateau</td>
 <td align="center">Guadalupe</td>
-<td align="center">64.37136</td>
+<td align="center">unknown</td>
+<td align="left">64.37136</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz020a</td>
 <td align="left">nacogdoches</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">71.34271</td>
+<td align="center">camp</td>
+<td align="left">71.34271</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz020b</td>
 <td align="left">nacogdoches</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">56.62909</td>
+<td align="center">camp</td>
+<td align="left">56.62909</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz020c</td>
 <td align="left">nacogdoches</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">53.55270</td>
+<td align="center">camp</td>
+<td align="left">53.55270</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz021a</td>
 <td align="left">nacogdoches</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">48.91144</td>
+<td align="center">camp</td>
+<td align="left">48.91144</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz021b</td>
 <td align="left">nacogdoches</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">46.08079</td>
+<td align="center">camp</td>
+<td align="left">46.08079</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz021c</td>
 <td align="left">nacogdoches</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">61.28651</td>
+<td align="center">camp</td>
+<td align="left">61.28651</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz021d</td>
 <td align="left">nacogdoches</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">77.02208</td>
+<td align="center">camp</td>
+<td align="left">77.02208</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz021e</td>
 <td align="left">nacogdoches</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">74.75191</td>
+<td align="center">camp</td>
+<td align="left">74.75191</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz021f</td>
 <td align="left">nacogdoches</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">49.62793</td>
+<td align="center">camp</td>
+<td align="left">49.62793</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz021g</td>
 <td align="left">nacogdoches</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">50.87638</td>
+<td align="center">camp</td>
+<td align="left">50.87638</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz021h</td>
 <td align="left">nacogdoches</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">43.59739</td>
+<td align="center">camp</td>
+<td align="left">43.59739</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz021i</td>
 <td align="left">nacogdoches</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">70.21314</td>
+<td align="center">camp</td>
+<td align="left">70.21314</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz022h</td>
 <td align="left">smith</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">72.06248</td>
+<td align="center">camp</td>
+<td align="left">72.06248</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz022i</td>
 <td align="left">smith</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">46.88491</td>
+<td align="center">camp</td>
+<td align="left">46.88491</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz022j</td>
 <td align="left">smith</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">50.39119</td>
+<td align="center">camp</td>
+<td align="left">50.39119</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz022k</td>
 <td align="left">smith</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">54.06644</td>
+<td align="center">camp</td>
+<td align="left">54.06644</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz022L</td>
 <td align="left">smith</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">55.79778</td>
+<td align="center">camp</td>
+<td align="left">55.79778</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz022m</td>
 <td align="left">smith</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">54.92731</td>
+<td align="center">camp</td>
+<td align="left">54.92731</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz023a</td>
 <td align="left">smith</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">71.77669</td>
+<td align="center">camp</td>
+<td align="left">71.77669</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz023b</td>
 <td align="left">smith</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">41.21730</td>
+<td align="center">camp</td>
+<td align="left">41.21730</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz023c</td>
 <td align="left">smith</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">62.83886</td>
+<td align="center">camp</td>
+<td align="left">62.83886</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz023e</td>
 <td align="left">smith</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">62.86062</td>
+<td align="center">camp</td>
+<td align="left">62.86062</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz023f</td>
 <td align="left">smith</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">45.75886</td>
+<td align="center">camp</td>
+<td align="left">45.75886</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz023g</td>
 <td align="left">smith</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">84.92990</td>
+<td align="center">camp</td>
+<td align="left">84.92990</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz024j</td>
 <td align="left">smith</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">88.53429</td>
+<td align="center">unknown</td>
+<td align="left">88.53429</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz025c</td>
 <td align="left">smith</td>
 <td align="center">piney woods</td>
 <td align="center">Neches</td>
-<td align="center">93.11325</td>
+<td align="center">unknown</td>
+<td align="left">93.11325</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz008cap</td>
 <td align="left">uvalde</td>
 <td align="center">edwards plateau</td>
 <td align="center">Nueces</td>
-<td align="center">73.68651</td>
+<td align="center">agg</td>
+<td align="left">73.68651</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz008iap</td>
 <td align="left">uvalde</td>
 <td align="center">edwards plateau</td>
 <td align="center">Nueces</td>
-<td align="center">76.01294</td>
+<td align="center">agg</td>
+<td align="left">76.01294</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz008oap</td>
 <td align="left">uvalde</td>
 <td align="center">edwards plateau</td>
 <td align="center">Nueces</td>
-<td align="center">90.56510</td>
+<td align="center">agg</td>
+<td align="left">90.56510</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz008pap</td>
 <td align="left">uvalde</td>
 <td align="center">edwards plateau</td>
 <td align="center">Nueces</td>
-<td align="center">82.10799</td>
+<td align="center">agg</td>
+<td align="left">82.10799</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz008x</td>
 <td align="left">uvalde</td>
 <td align="center">edwards plateau</td>
 <td align="center">Nueces</td>
-<td align="center">79.06205</td>
+<td align="center">agg</td>
+<td align="left">79.06205</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz005a</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">84.65951</td>
+<td align="center">agg</td>
+<td align="left">84.65951</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz005b</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">83.23678</td>
+<td align="center">agg</td>
+<td align="left">83.23678</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz005c</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">106.71703</td>
+<td align="center">agg</td>
+<td align="left">106.71703</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz005e</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">148.79264</td>
+<td align="center">agg</td>
+<td align="left">148.79264</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz005g</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">38.75136</td>
+<td align="center">agg</td>
+<td align="left">38.75136</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz005h</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">43.52312</td>
+<td align="center">agg</td>
+<td align="left">43.52312</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz005i</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">39.80383</td>
+<td align="center">agg</td>
+<td align="left">39.80383</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz005j</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">36.64441</td>
+<td align="center">agg</td>
+<td align="left">36.64441</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz005k</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">38.71038</td>
+<td align="center">agg</td>
+<td align="left">38.71038</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz005L</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">41.86583</td>
+<td align="center">agg</td>
+<td align="left">41.86583</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz005o</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">78.64626</td>
+<td align="center">agg</td>
+<td align="left">78.64626</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz005q</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">78.28938</td>
+<td align="center">agg</td>
+<td align="left">78.28938</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz005r</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">80.12793</td>
+<td align="center">agg</td>
+<td align="left">80.12793</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz005t</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">77.31495</td>
+<td align="center">agg</td>
+<td align="left">77.31495</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz005u</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">80.30418</td>
+<td align="center">agg</td>
+<td align="left">80.30418</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz005x</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">63.26502</td>
+<td align="center">agg</td>
+<td align="left">63.26502</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz006a</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">44.17576</td>
+<td align="center">agg</td>
+<td align="left">44.17576</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz006b</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">75.65424</td>
+<td align="center">agg</td>
+<td align="left">75.65424</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz006g</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">64.72616</td>
+<td align="center">agg</td>
+<td align="left">64.72616</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz006h</td>
 <td align="left">JW, hinojosa site</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">NRG</td>
-<td align="center">52.29545</td>
+<td align="center">agg</td>
+<td align="left">52.29545</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz030h</td>
 <td align="left">camp</td>
 <td align="center">piney woods</td>
 <td align="center">Red</td>
-<td align="center">56.99188</td>
+<td align="center">unknown</td>
+<td align="left">56.99188</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz030i</td>
 <td align="left">camp</td>
 <td align="center">piney woods</td>
 <td align="center">Red</td>
-<td align="center">90.67431</td>
+<td align="center">unknown</td>
+<td align="left">90.67431</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz031a</td>
 <td align="left">camp</td>
 <td align="center">piney woods</td>
 <td align="center">Red</td>
-<td align="center">98.02555</td>
+<td align="center">camp</td>
+<td align="left">98.02555</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz033f</td>
 <td align="left">harris</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">San Jacinto</td>
-<td align="center">78.09832</td>
+<td align="center">camp</td>
+<td align="left">78.09832</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz033g</td>
 <td align="left">harris</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">San Jacinto</td>
-<td align="center">38.07038</td>
+<td align="center">camp</td>
+<td align="left">38.07038</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz033h</td>
 <td align="left">harris</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">San Jacinto</td>
-<td align="center">53.05908</td>
+<td align="center">camp</td>
+<td align="left">53.05908</td>
 </tr>
 <tr class="even">
 <td align="left">perdiz033i</td>
 <td align="left">harris</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">San Jacinto</td>
-<td align="center">55.97309</td>
+<td align="center">camp</td>
+<td align="left">55.97309</td>
 </tr>
 <tr class="odd">
 <td align="left">perdiz033k</td>
 <td align="left">harris</td>
 <td align="center">gulf coast prairies and marshes</td>
 <td align="center">San Jacinto</td>
-<td align="center">82.63957</td>
+<td align="center">camp</td>
+<td align="left">82.63957</td>
 </tr>
 <tr class="even">
 <td align="left">rep02a</td>
 <td align="left">navarro</td>
 <td align="center">blackland prairies</td>
 <td align="center">Trinity</td>
-<td align="center">47.20311</td>
+<td align="center">unknown</td>
+<td align="left">47.20311</td>
 </tr>
 <tr class="odd">
 <td align="left">rep02b</td>
 <td align="left">navarro</td>
 <td align="center">blackland prairies</td>
 <td align="center">Trinity</td>
-<td align="center">47.91456</td>
+<td align="center">unknown</td>
+<td align="left">47.91456</td>
 </tr>
 <tr class="even">
 <td align="left">rep02c</td>
 <td align="left">navarro</td>
 <td align="center">blackland prairies</td>
 <td align="center">Trinity</td>
-<td align="center">52.54670</td>
+<td align="center">unknown</td>
+<td align="left">52.54670</td>
 </tr>
 <tr class="odd">
 <td align="left">rep02e</td>
 <td align="left">navarro</td>
 <td align="center">blackland prairies</td>
 <td align="center">Trinity</td>
-<td align="center">59.06926</td>
+<td align="center">unknown</td>
+<td align="left">59.06926</td>
 </tr>
 <tr class="even">
 <td align="left">rep02k</td>
 <td align="left">navarro</td>
 <td align="center">blackland prairies</td>
 <td align="center">Trinity</td>
-<td align="center">60.77844</td>
+<td align="center">unknown</td>
+<td align="left">60.77844</td>
 </tr>
 <tr class="odd">
 <td align="left">rep05i</td>
 <td align="left">navarro</td>
 <td align="center">blackland prairies</td>
 <td align="center">Trinity</td>
-<td align="center">45.39655</td>
+<td align="center">camp</td>
+<td align="left">45.39655</td>
 </tr>
 <tr class="even">
 <td align="left">rep018f</td>
 <td align="left">collin</td>
 <td align="center">blackland prairies</td>
 <td align="center">Trinity</td>
-<td align="center">48.29525</td>
+<td align="center">unknown</td>
+<td align="left">48.29525</td>
 </tr>
 <tr class="odd">
 <td align="left">smu03</td>
 <td align="left">navarro</td>
 <td align="center">edwards plateau</td>
 <td align="center">Trinity</td>
-<td align="center">47.19561</td>
+<td align="center">unknown</td>
+<td align="left">47.19561</td>
 </tr>
 <tr class="even">
 <td align="left">rep06</td>
 <td align="left">freestone</td>
 <td align="center">oak woods and parairies</td>
 <td align="center">Trinity</td>
-<td align="center">49.07271</td>
+<td align="center">camp</td>
+<td align="left">49.07271</td>
 </tr>
 </tbody>
 </table>
@@ -1420,7 +1528,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="measurement-error.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="site-type.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
