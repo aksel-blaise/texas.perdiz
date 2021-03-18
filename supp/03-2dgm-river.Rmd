@@ -92,7 +92,7 @@ shapeHulls(pc.plot,
            group.cols = col.hull)
 ```
 
-# Procrustes ANOVA - allometry
+## Procrustes ANOVA - allometry
 
 A residual randomisation permutation procedure (RRPP; n = 10,000 permutations) was used for all Procrustes ANOVAs (Adams and Collyer 2015; Michael L. Collyer and Adams 2018), which has higher statistical power and a greater ability to identify patterns in the data should they be present (Anderson and Ter Braak 2003). To assess whether shape changes differ by size or region (Texas natural geography, as determined by Texas Parks and Wildlife), Procrustes ANOVAs (Goodall 1991) were also run that enlist effect-sizes (zscores) computed as standard deviates of the generated sampling distributions (M. L. Collyer, Sekora, and Adams 2015).
 
