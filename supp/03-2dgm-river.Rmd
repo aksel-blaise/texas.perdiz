@@ -53,7 +53,7 @@ csz <- qdata$csz
 river <- qdata$river
 
 # palette
-pal = wes_palette("Darjeeling1", 6, type = "continuous")
+pal = wes_palette("Darjeeling1", 9, type = "continuous")
 
 # boxplot of Perdiz arrow points by river
 csz.riv <- ggplot(qdata, aes(x = river, y = csz, color = river)) +
@@ -62,7 +62,7 @@ csz.riv <- ggplot(qdata, aes(x = river, y = csz, color = river)) +
   scale_color_manual(values = pal) +
   theme(legend.position = "none") +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
-  labs(x = 'River basin', y = 'Centroid Size')
+  labs(x = 'River Basin', y = 'Centroid Size')
   
 # render plot
 csz.riv
@@ -78,9 +78,9 @@ pca <- gm.prcomp(Y.gpa$coords)
 summary(pca)
 
 # set plot parameters
-pch.gps <- c(3,15:19)[as.factor(river)]
+pch.gps <- c(3:6,15:19)[as.factor(river)]
 col.gps <- pal[as.factor(river)]
-col.hull <- c("#32806E","#D98F2A","#FF0000","#5BBCD6","#91A737","#F49C00")
+col.hull <- c("#FF0000","#7F5045","#00A08A" ,"#79A645","#F59800","#F2AD00","#F98400","#AAA06B","#5BBCD6")
 
 # pca plot
 pc.plot <- plot(pca,
@@ -90,12 +90,6 @@ pc.plot <- plot(pca,
 shapeHulls(pc.plot,
            groups = river,
            group.cols = col.hull)
-
-# identify shapes at x/y extremes
-#picknplot.shape(pc.plot)
-
-# pca warp                   
-#knitr::include_graphics('./img/pca.warp.jpg')
 ```
 
 ## Procrustes ANOVA - shape and size
@@ -127,6 +121,13 @@ fit.sh.reg <- procD.lm(shape ~ river,
 
 # shape
 anova(fit.sh.reg)
+
+# pairwise comparison of LS means = which differ?
+sh.reg <- pairwise(fit.sh.reg,
+                   groups = qdata$river)
+summary(sh.reg,
+        confidence = 0.95,
+        test.type = "dist")
 ```
 
 ## Morphological disparity
@@ -155,8 +156,11 @@ plot(mean$Brazos)
 plot(mean$Colorado)
 plot(mean$Guadalupe)
 plot(mean$Neches)
-plot(mean$Nueces)
 plot(mean$NRG)
+plot(mean$Nueces)
+plot(mean$Red)
+plot(mean$`San Jacinto`)
+plot(mean$Trinity)
 
 # comparison plots
 plotRefToTarget(mean$Brazos,
@@ -188,6 +192,20 @@ plotRefToTarget(mean$Brazos,
                 method = "points",
                 mag = 1)
 
+plotRefToTarget(mean$Brazos, 
+                mean$Red, 
+                method = "points",
+                mag = 1)
+
+plotRefToTarget(mean$Brazos, 
+                mean$`San Jacinto`, 
+                method = "points",
+                mag = 1)
+
+plotRefToTarget(mean$Brazos, 
+                mean$Trinity, 
+                method = "points",
+                mag = 1)
 
 plotRefToTarget(mean$Colorado, 
                 mean$Guadalupe, 
@@ -206,12 +224,25 @@ plotRefToTarget(mean$Colorado,
                 method = "points",
                 mag = 1)
 
-
 plotRefToTarget(mean$Colorado, 
                 mean$Nueces, 
                 method = "points",
                 mag = 1)
 
+plotRefToTarget(mean$Colorado, 
+                mean$Red, 
+                method = "points",
+                mag = 1)
+
+plotRefToTarget(mean$Colorado, 
+                mean$`San Jacinto`, 
+                method = "points",
+                mag = 1)
+
+plotRefToTarget(mean$Colorado, 
+                mean$Trinity, 
+                method = "points",
+                mag = 1)
 
 plotRefToTarget(mean$Guadalupe, 
                 mean$Neches, 
@@ -228,6 +259,21 @@ plotRefToTarget(mean$Guadalupe,
                 method = "points",
                 mag = 1)
 
+plotRefToTarget(mean$Guadalupe, 
+                mean$Red, 
+                method = "points",
+                mag = 1)
+
+plotRefToTarget(mean$Guadalupe, 
+                mean$`San Jacinto`, 
+                method = "points",
+                mag = 1)
+
+plotRefToTarget(mean$Guadalupe, 
+                mean$Trinity, 
+                method = "points",
+                mag = 1)
+
 plotRefToTarget(mean$Neches, 
                 mean$NRG, 
                 method = "points",
@@ -238,8 +284,53 @@ plotRefToTarget(mean$Neches,
                 method = "points",
                 mag = 1)
 
+plotRefToTarget(mean$Neches, 
+                mean$Red, 
+                method = "points",
+                mag = 1)
+
+plotRefToTarget(mean$Neches, 
+                mean$`San Jacinto`, 
+                method = "points",
+                mag = 1)
+
+plotRefToTarget(mean$Neches, 
+                mean$Trinity, 
+                method = "points",
+                mag = 1)
+
 plotRefToTarget(mean$NRG, 
                 mean$Nueces, 
+                method = "points",
+                mag = 1)
+
+plotRefToTarget(mean$NRG, 
+                mean$Red, 
+                method = "points",
+                mag = 1)
+
+plotRefToTarget(mean$NRG, 
+                mean$`San Jacinto`, 
+                method = "points",
+                mag = 1)
+
+plotRefToTarget(mean$NRG, 
+                mean$Trinity, 
+                method = "points",
+                mag = 1)
+
+plotRefToTarget(mean$Red, 
+                mean$`San Jacinto`, 
+                method = "points",
+                mag = 1)
+
+plotRefToTarget(mean$Red, 
+                mean$Trinity, 
+                method = "points",
+                mag = 1)
+
+plotRefToTarget(mean$`San Jacinto`, 
+                mean$Trinity, 
                 method = "points",
                 mag = 1)
 ```
